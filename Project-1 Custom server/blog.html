@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | MySite</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body,
+    html {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3f4f6;
+      min-height: 100%;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #111827;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    main {
+      flex: 1;
+      padding: 40px;
+    }
+
+    .blog-heading {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .blog-heading h2 {
+      font-size: 2.5rem;
+      color: #1e3a8a;
+    }
+
+    .blog-list-custom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .top-row {
+      display: flex;
+      gap: 30px;
+      width: 100%;
+      max-width: 900px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .center-row {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .blog-card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .center-card {
+      max-width: 600px;
+    }
+
+    .blog-card h3 {
+      font-size: 1.5rem;
+      color: #111827;
+      margin-bottom: 10px;
+    }
+
+    .blog-card p {
+      color: #4b5563;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    footer {
+      background-color: #111827;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .blog-heading h2 {
+        font-size: 2rem;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 15px;
+      }
+
+      .top-row {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>MySite</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="blog-heading">
+        <h2>Latest Blog Posts</h2>
+      </div>
+
+      <div class="blog-list-custom">
+        <div class="row top-row">
+          <div class="blog-card">
+            <h3>Top 10 Web Design Tips for Beginners</h3>
+            <p>Learn the top web design principles that every beginner should follow to make clean, modern, and user-friendly websites.</p>
+          </div>
+          <div class="blog-card">
+            <h3>Why Node.js is Great for Web Development</h3>
+            <p>Discover the benefits of using Node.js for building scalable and efficient web applications in today's ecosystem.</p>
+          </div>
+        </div>
+        <div class="row center-row">
+          <div class="blog-card center-card">
+            <h3>Understanding the DOM: A Developer’s Guide</h3>
+            <p>This article helps you master how the Document Object Model (DOM) works in HTML, CSS, and JavaScript development.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      &copy; 2025 MySite. All rights reserved.
+    </footer>
+  </div>
+</body>
+
+</html>

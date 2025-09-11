@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f9fcfd;
+      margin: 0;
+      padding: 20px;
+      color: #1f2937;
+    }
+
+    h1 {
+      text-align: center;
+      color: #0369a1;
+      margin-bottom: 30px;
+    }
+
+    .form-container,
+    .table-container {
+      max-width: 700px;
+      margin: 20px auto;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      color: #0c4a6e;
+      margin-bottom: 15px;
+      border-left: 4px solid #0ea5e9;
+      padding-left: 10px;
+    }
+
+    form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    input[type="text"] {
+      padding: 12px;
+      flex: 1;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      outline: none;
+      transition: border 0.2s;
+    }
+
+    input[type="text"]:focus {
+      border: 1px solid #0ea5e9;
+      box-shadow: 0 0 4px rgba(14, 165, 233, 0.3);
+    }
+
+    button {
+      padding: 12px 18px;
+      background: #0284c7;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #0369a1;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    th,
+    td {
+      padding: 14px;
+      text-align: center;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    th {
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+
+    td {
+      color: #334155;
+    }
+
+    a {
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    a.delete {
+      color: #dc2626;
+      background: #fee2e2;
+    }
+
+    a.delete:hover {
+      background: #fca5a5;
+      color: #991b1b;
+    }
+
+    a.edit {
+      color: #0369a1;
+      background: #e0f2fe;
+    }
+
+    a.edit:hover {
+      background: #bae6fd;
+      color: #0c4a6e;
+    }
+  </style>
+</head>
+
+<body>
+  <h1> My Task Manager</h1>
+
+  <div class="form-container">
+    <h2>Add Todo</h2>
+    <form action="/addTodo" method="post">
+      <input type="text" name="todo" placeholder="Enter your task..." required>
+      <button type="submit">Add Task</button>
+    </form>
+  </div>
+
+  <div class="table-container">
+    <h2>View Todos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Todo</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% todoList.map((val) => { %>
+          <tr>
+            <td><%= val.id %></td>
+            <td><%= val.todo %></td>
+            <td>
+              <a class="edit" href="/editTodo?id=<%= val.id %>">✏ Edit</a>
+              <a class="delete" href="/deleteTodo?id=<%= val.id %>">🗑 Delete</a>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
