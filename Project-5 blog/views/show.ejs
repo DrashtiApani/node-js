@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Show Blogs</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <header>
+    <h1>📚 Blogs</h1>
+    <a href="/">+ Add Blog</a>
+  </header>
+
+  <div class="blog-container">
+    <% blog.forEach(val=> { %>
+      <div class="card">
+        <img src="<%= val.profile %>" alt="<%= val.title %>">
+        <div class="card-content">
+          <span class="category">
+            <%= val.category ? val.category.join(', ') : ' Uncategorized' %>
+          </span>
+          <h3>
+            <%= val.title %>
+          </h3>
+          <p>
+            <%= val.description ? val.description.substring(0, 100) : 'No description available.' %>...
+          </p>
+          <a href="/readMore/<%= val._id %>">Read More</a>
+        </div>
+      </div>
+      <% }) %>
+
+
+  </div>
+</body>
+
+</html>

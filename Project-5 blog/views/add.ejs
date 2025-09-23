@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add Blog</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="form-wrapper">
+    <h2>✍️ Add Blog</h2>
+    <form action="/formAdd" method="POST" enctype="multipart/form-data">
+      <label>Title:</label>
+      <input type="text" name="title" required>
+
+      <label>Description:</label>
+      <textarea name="description" required></textarea>
+
+      <label>Category:</label>
+      <input type="text" name="category" placeholder="Comma separated categories" required>
+
+      <label>Image:</label>
+      <input type="file" name="profile" required>
+
+      <button type="submit">Add Blog</button>
+    </form>
+    <a href="/show">⬅ Back to Blogs</a>
+  </div>
+</body>
+</html>
