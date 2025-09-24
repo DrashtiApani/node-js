@@ -21,7 +21,7 @@ routes.get('/resetPassword', resetPasswordPage)
 routes.get('/change-password', changePasswordPage)
 routes.post('/change-password', changePassword)
 routes.get('/profile', profilePage)
-routes.use('/admin', require('./admin_Routes'))
-routes.use("/blog", require("./blog_Routes"));
+routes.use('/admin', require('./adminRoutes'))
+routes.use("/blog", require("./blogRoutes"));
 
 module.exports = routes;

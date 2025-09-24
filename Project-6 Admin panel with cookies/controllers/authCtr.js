@@ -83,17 +83,17 @@ module.exports.sendEmailWithOtp = async (req,res) => {
 
     
     let sendOtp = await sendEmail({
-      from: "divyangrawal257@gmail.com",
-      to: "divyangrawal257@gmail.com",
+      from: "drashtiapani4@gmail.com",
+      to: "drashtiapani4@gmail.com",
       subject: "OTP Verification ✔",
       text: `Your OTP is ${Otp}. OTP is valid only 5 minutes.`,
-      html: `<b>Hello!</b> <p>Your OTP is <b>${Otp}</b>. OTP is valid only 5 minutes.</p>`,
+      html: `<b>Hello!</b> <p>Your OTP is <b>${Otp}</b>. OTP is valid only 2 minutes.</p>`,
     });
     res.cookie("otp",Otp);
     res.cookie("email",req.body.email);
     return res.render('Auth/verifyOtp');
 
-    console.log("OTP sent successfully:", sendOtp.messageId);
+    // console.log("OTP sent successfully:", sendOtp.messageId);
  
   } catch (err) {
     console.log(err);
