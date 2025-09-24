@@ -1,0 +1,258 @@
+<%- include("header") %>
+<!-- ============================================================== -->
+<!-- End Left Sidebar - style you can find in sidebar.scss  -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Page wrapper  -->
+<!-- ============================================================== -->
+<div class="page-wrapper">
+  <!-- ============================================================== -->
+  <!-- Bread crumb and right sidebar toggle -->
+  <!-- ============================================================== -->
+  <div class="page-breadcrumb">
+    <div class="row">
+      <div class="col-12 d-flex no-block align-items-center">
+        <h4 class="page-title">Admin</h4>
+        <div class="ml-auto text-right">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Library
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ============================================================== -->
+  <!-- End Bread crumb and right sidebar toggle -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- Container fluid  -->
+  <!-- ============================================================== -->
+  <div class="container-fluid">
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <form class="form-horizontal" action="/admin/addAdmin" method="post" enctype="multipart/form-data">
+            <div class="card-body">
+              <h4 class="card-title">Admin Info</h4>
+              <div class="form-group row">
+                <label
+                  for="fname"
+                  class="col-sm-3 text-right control-label col-form-label"
+                  >First Name</label
+                >
+                <div class="col-sm-9">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="fname"
+                    name = "fname"
+                    placeholder="First Name Here"
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label
+                  for="lname"
+                  class="col-sm-3 text-right control-label col-form-label"
+                  >Last Name</label
+                >
+                 <div class="col-sm-9">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="fname"
+                    name="lname"
+                    placeholder="Enter Last Name "
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label
+                  for="lname"
+                  class="col-sm-3 text-right control-label col-form-label"
+                  >Email</label
+                >
+                <div class="col-sm-9">
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    id="lname"
+                    placeholder=" Enter Email"
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label
+                  for="lname"
+                  class="col-sm-3 text-right control-label col-form-label"
+                  >Password</label
+                >
+                <div class="col-sm-9">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="lname"
+                    name="password"
+                    placeholder="Password Here"
+                  />
+                </div>
+              </div>
+             
+               <div class="form-group row">
+              <label class="col-md-3">Gender</label>
+              <div class="col-md-9">
+                <div class="custom-control custom-radio">
+                  <input
+                    type="radio"
+                    class="custom-control-input"
+                    id="customControlValidation1"
+                    value="male"
+                    name="gender"
+                    required
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="customControlValidation1"
+                    >Male</label
+                  >
+                </div>
+                <div class="custom-control custom-radio">
+                  <input
+                    type="radio"
+                    class="custom-control-input"
+                    id="customControlValidation2"
+                   
+                    value="female"
+                    name="gender"
+                    required
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="customControlValidation2"
+                    >Female</label
+                  >
+                </div>
+               
+              </div>
+            </div>
+                  <div class="form-group row">
+              <label class="col-md-3">Qualification</label>
+              <div class="col-md-9">
+                <div class="custom-control custom-checkbox mr-sm-2">
+                  <input
+                    type="checkbox"
+                    class="custom-control-input"
+                    id="customControlAutosizing1"
+                    name="qualification"
+                    value="10th"
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="customControlAutosizing1"
+                    >10th</label
+                  >
+                </div>
+                <div class="custom-control custom-checkbox mr-sm-2">
+                  <input
+                    type="checkbox"
+                    class="custom-control-input"
+                    id="customControlAutosizing2"
+                    name="qualification"
+                    value="12th"
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="customControlAutosizing2"
+                    >12th</label
+                  >
+                </div>
+                <div class="custom-control custom-checkbox mr-sm-2">
+                  <input
+                    type="checkbox"
+                    class="custom-control-input"
+                    id="customControlAutosizing3"
+                    name="qualification"
+                    value="Granguted"
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="customControlAutosizing3"
+                    >Granguted</label
+                  >
+                </div>
+              </div>
+            </div>
+
+             <div class="form-group row">
+              <label class="col-md-3 m-t-15">Select City</label>
+              <div class="col-md-9">
+                <select
+                  class="select2 form-control m-t-15"
+                  style="height: 36px; width: 100%"
+                  name="city"
+                >
+                  <option value="">----select-----</option>
+                  <option value="Surat">Surat</option>
+                  <option value="Ahmedabad">Ahmedabad</option>
+                  <option value="Baroda">Baroda</option>
+                  <option value="Rajkot">Rajkot</option>
+                </select>
+              </div>
+           
+            </div>
+                  <div class="form-group row">
+              <label class="col-md-3">File Upload</label>
+              <div class="col-md-9">
+                <div class="custom-file">
+                  <input
+                    type="file"
+                    class="custom-file-input"
+                    id="validatedCustomFile"
+                    name="profile"
+                    required
+                  />
+                  <label class="custom-file-label" for="validatedCustomFile"
+                    >Choose file...</label
+                  >
+                
+                </div>
+              </div>
+            </div>
+              <div class="form-group row">
+                <label
+                  for="cono1"
+                  class="col-sm-3 text-right control-label col-form-label"
+                  >Message</label  >
+                <div class="col-sm-9">
+                  <textarea class="form-control" name="message"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="border-top">
+              <div class="card-body">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        
+        
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include("footer") %>
+</div>

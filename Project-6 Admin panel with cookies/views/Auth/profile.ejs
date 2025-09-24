@@ -1,0 +1,84 @@
+<%- include("../header") %>
+
+<div class="page-wrapper">
+  <!-- Breadcrumb -->
+  <div class="page-breadcrumb">
+    <div class="row">
+      <div class="col-12 d-flex no-block align-items-center">
+        <h4 class="page-title">My Profile</h4>
+        <div class="ml-auto text-right">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Profile
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Profile Content -->
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card shadow-lg rounded-lg border-0">
+          <div class="card-body text-center bg-light">
+            <!-- Profile Image -->
+            <% if(admin.profile){ %>
+              <img src="/uploads/<%= admin.profile %>" 
+                   alt="profile pic" 
+                   class="rounded-circle mb-3 shadow"
+                   width="120" height="120" 
+                   style="object-fit: cover;">
+            <% } else { %>
+              <img src="https://via.placeholder.com/120" 
+                   alt="profile pic" 
+                   class="rounded-circle mb-3 shadow">
+            <% } %>
+
+            <h3 class="mb-0"><%= admin.fname %> <%= admin.lname %></h3>
+            <p class="text-muted mb-3"><i class="fa fa-envelope"></i> <%= admin.email %></p>
+
+            <hr>
+
+            <div class="row text-left">
+              <div class="col-md-6 mb-3">
+                <h6 class="text-muted">Gender</h6>
+                <p class="font-weight-bold"><%= admin.gender %></p>
+              </div>
+              <div class="col-md-6 mb-3">
+                <h6 class="text-muted">City</h6>
+                <p class="font-weight-bold"><%= admin.city %></p>
+              </div>
+              <div class="col-md-6 mb-3">
+                <h6 class="text-muted">Qualification</h6>
+                <p class="font-weight-bold">
+                  <% if(Array.isArray(admin.qualification)){ %>
+                    <%= admin.qualification.join(", ") %>
+                  <% } else { %>
+                    <%= admin.qualification %>
+                  <% } %>
+                </p>
+              </div>
+              <div class="col-md-6 mb-3">
+                <h6 class="text-muted">Message</h6>
+                <p class="font-weight-bold"><%= admin.message %></p>
+              </div>
+            </div>
+
+            <hr>
+            <a href="/admin" class="btn btn-secondary ml-2">
+              <i class="fa fa-arrow-left"></i> Back
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("../footer") %>
